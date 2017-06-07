@@ -7,11 +7,10 @@ const app = express();
 const port = 8000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.listen(port, () => {
+app.listen(process.env.PORT || port, () => {
     console.log('DB connected');
     console.log('We are live on ' + port);
 });
-
 require('./app/routes')(app);
 
 mongoose.Promise  = global.Promise;
