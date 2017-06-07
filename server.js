@@ -15,6 +15,6 @@ app.listen(port, () => {
 require('./app/routes')(app);
 
 mongoose.Promise  = global.Promise;
-mongoose.connect(process.env.MONGODB_URI || dbOptions.url); // change this url
+mongoose.connect(process.env.MONGODB_URI || dbOptions.url);
 
 const db = mongoose.connection;
